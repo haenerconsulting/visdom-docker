@@ -6,7 +6,7 @@ ARG BUILD_DATE
 ARG VCS_REF
 ARG GIT_COMMIT=unspecified
 ARG VISDOM_GIT_REPO=https://github.com/phaener/visdom.git
-ARG VISDOM_GIT_BRANCH=docker-file
+ARG VISDOM_GIT_BRANCH=docker-support
 LABEL org.label-schema.version=$VERSION
 LABEL org.label-schema.vcs-ref=$VCS_REF
 LABEL org.label-schema.vcs-url=https://github.com/haenerconsulting/visdom

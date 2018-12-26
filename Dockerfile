@@ -21,7 +21,7 @@ ENV LOGGING_LEVEL="INFO"
 ENV ENABLE_LOGIN="true"
 ENV USERNAME="visdom"
 ENV PASSWORD="visdom"
-#ENV FORCE_NEW_COOKIE"
+#ENV FORCE_NEW_COOKIE="true"
 ENV BASE_URL="/"
 
 RUN apt-get update && apt-get install git -y

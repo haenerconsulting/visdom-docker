@@ -29,7 +29,7 @@ ENV BASE_URL="/"
 RUN apt-get update && apt-get install git -y
 WORKDIR /home/visdom/src
 RUN git clone $VISDOM_GIT_REPO && git checkout $VISDOM_GIT_BRANCH
-#COPY src /home/visdom/src/visdom
+RUN git clone https://github.com/phaener/visdom.git && git checkout docker-image
 RUN cd visdom && pip install --no-cache-dir -e . 
 
 RUN mkdir -p /home/visdom/data

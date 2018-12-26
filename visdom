@@ -1,0 +1,19 @@
+#!/bin/sh
+. ./variables.sh
+export HOSTNAME=localhost
+export PORT=8097
+export ENV_PATH=/home/visdom/data/
+export ENABLE_LOGIN
+export USERNAME=haener
+export PASSWORD=password
+#export READ_ONLY
+export FORCE_NEW_COOKIE
+export LOGGING_LEVEL=DEBUG
+
+docker run -it --rm \
+-p ${PORT}:${PORT} \
+-v ${PWD}/data:/home/visdom/data \
+-e USERNAME=$USERNAME \
+-e PASSWORD=$PASSWORD \
+--name visdom \
+$IMAGE_NAME

@@ -4,6 +4,8 @@ ARG VERSION
 ARG BUILD_DATE
 ARG VCS_REF
 ARG GIT_COMMIT=unspecified
+ARG VISDOM_GIT_REPO=https://github.com/phaener/visdom.git
+ARG VISDOM_GIT_BRANCH=docker-file 
 FROM python:${PY_VERSION}-${DIST}
 LABEL org.label-schema.version=$VERSION
 LABEL org.label-schema.vcs-ref=$VCS_REF
@@ -26,7 +28,7 @@ ENV BASE_URL="/"
 
 RUN apt-get update && apt-get install git -y
 WORKDIR /home/visdom/src
-RUN git clone https://github.com/phaener/visdom.git 
+RUN git clone $VISDOM_GIT_REPO && git checkout $VISDOM_GIT_BRANCH
 #COPY src /home/visdom/src/visdom
 RUN cd visdom && pip install --no-cache-dir -e . && easy_install .
 

@@ -4,10 +4,10 @@ export HOSTNAME=localhost
 export PORT=8097
 export ENV_PATH=/home/visdom/data/
 export ENABLE_LOGIN
-export USERNAME=haener
-export PASSWORD=password
+export USERNAME=visdom
+export PASSWORD=visdom
 #export READ_ONLY
-export FORCE_NEW_COOKIE
+#export FORCE_NEW_COOKIE
 export LOGGING_LEVEL=DEBUG
 
 docker run -it --rm \

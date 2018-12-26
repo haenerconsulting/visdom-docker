@@ -30,7 +30,7 @@ RUN apt-get update && apt-get install git -y
 WORKDIR /home/visdom/src
 RUN git clone $VISDOM_GIT_REPO && git checkout $VISDOM_GIT_BRANCH
 #COPY src /home/visdom/src/visdom
-RUN cd visdom && pip install --no-cache-dir -e . && easy_install .
+RUN cd visdom && pip install --no-cache-dir -e . 
 
 RUN mkdir -p /home/visdom/data
 VOLUME /home/visdom/data

@@ -1,6 +1,6 @@
 #!/bin/sh
 . ./variables.sh
-export HOSTNAME=localhost
+export HOSTNAME="localhost"
 export PORT=8097
 export ENV_PATH=/home/visdom/data/
 export ENABLE_LOGIN
@@ -13,7 +13,11 @@ export LOGGING_LEVEL=DEBUG
 docker run -it --rm \
 -p ${PORT}:${PORT} \
 -v ${PWD}/data:/home/visdom/data \
+-e HOSTNAME=$HOSTNAME \
+-e PORT=$PORT \
+-e ENV_PATH=$ENV_PATH \
 -e USERNAME=$USERNAME \
 -e PASSWORD=$PASSWORD \
+-e LOGGING_LEVEL=$LOGGING_LEVEL \
 --name visdom \
 $IMAGE_NAME

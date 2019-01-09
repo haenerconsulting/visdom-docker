@@ -1,4 +1,4 @@
-ARG PY_VERSION=3.7
+ARG PY_VERSION=3.6
 ARG DIST=slim
 FROM python:${PY_VERSION}-${DIST}
 ARG VERSION
@@ -30,7 +30,7 @@ RUN apt-get update && apt-get install git -y
 WORKDIR /home/visdom/src
 RUN git clone $VISDOM_GIT_REPO && \
   cd visdom && \
-  git branch $VISDOM_GIT_BRANCH && \
+  git checkout $VISDOM_GIT_BRANCH && \
   pip install --no-cache-dir -e .
 RUN mkdir -p /home/visdom/data
 VOLUME /home/visdom/data
